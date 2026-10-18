@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Smart Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">SP</div>
+      <div>
+        <h1>Student Smart Planner</h1>
+        <p>Plan better. Study smarter.</p>
+      </div>
+            <button id="themeToggle" type="button">🌙 Dark Mode</button>
+    </header>
+
+    <section class="stats">
+      <div class="stat">
+        <span>Total Tasks</span>
+        <strong id="total">0</strong>
+      </div>
+      <div class="stat">
+        <span>Pending</span>
+        <strong id="pending">0</strong>
+      </div>
+      <div class="stat">
+        <span>Completed</span>
+        <strong id="completed">0</strong>
+      </div>
+      <div class="stat">
+        <span>Study Progress</span>
+        <strong id="progressText">0%</strong>
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Add a New Task</h2>
+      <form id="taskForm">
+        <label for="taskTitle">Task name</label>
+        <input id="taskTitle" placeholder="e.g. Java assignment" required maxlength="100">
+
+        <div class="fields">
+          <div>
+            <label for="taskType">Task type</label>
+            <select id="taskType">
+              <option>Assignment</option>
+              <option>Exam</option>
+              <option>Project</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="taskDate">Due date</label>
+            <input id="taskDate" type="date" required>
+          </div>
+        </div>
+
+        <button type="submit">+ Add Task</button>
+      </form>
+    </section>
+
+<section class="panel reminder-panel">
+  <h2>🔔 Due Date Reminders</h2>
+  <div id="dueReminders">Checking your tasks...</div>
+</section>
+
+    <section class="panel upcoming-panel">
+      <h2>📅 Upcoming Tasks</h2>
+      <div id="upcomingTasks">No upcoming tasks.</div>
+    </section>
+
+    <section class="panel calendar-panel">
+      <h2>🗓️ Study Calendar</h2>
+      <label for="calendarDate">Choose a date</label>
+      <input type="date" id="calendarDate">
+      <div id="calendarTasks">Choose a date to view your tasks.</div>
+    </section>
+
+    <section class="tasks">
+      <div class="task-heading">
+        <h2>My Tasks</h2>
+        <select id="filter" aria-label="Filter tasks">
+          <option value="all">All Tasks</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div id="taskList"></div>
+    </section>
+
+    <footer>Small steps. Big progress.</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
